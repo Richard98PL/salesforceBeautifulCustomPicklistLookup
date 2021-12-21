@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Contact_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Contact Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Field__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Lead Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead From Contact Configuration</label>
+    <listViews>
+        <fullName>Configuration</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Lead_Field__c</columns>
+        <columns>Contact_Field__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Configuration</label>
+        <language>en_US</language>
+    </listViews>
+    <pluralLabel>Lead From Contact Configuration</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

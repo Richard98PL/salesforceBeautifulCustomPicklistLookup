@@ -1,0 +1,92 @@
+<template>
+    <div class="slds-box slds-is-relative">
+        <div if:true={isPardotSynchronized}>
+            <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+
+            <div class = "slds-align_absolute-center">
+                <lightning-card variant="basic" icon-name="standard:lead">
+                    <h1 slot="title" class="cardLabel">{labels.cardTitle}</h1>
+                </lightning-card>
+            </div>
+
+            <div class="slds-grid">
+
+                <div class="slds-col slds-order_1">
+
+                    <div class = "slds-text-align_left" style="padding-top:2%; padding-left:24%; width: 90%;">
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input id = 'first-name' type="text" label="First Name" placeholder="Lead name..." value = {contactFirstName} required
+                            onchange={leadFirstNameChange}></lightning-input>
+                        </div>
+                    </div>
+
+                    <div class = "slds-text-align_left" style="padding-top:2%; padding-left:24%; width: 90%;">
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-input id = 'last-name' type="text" label="Last Name" placeholder="Lead name..." value = {leadInitialLastName} required
+                            onchange={leadLastNameChange}></lightning-input>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="slds-col slds-order_2">
+                    <div style = "padding: 2%; width:75%;" class = "slds-text-align_left">
+                        <lightning-combobox name="progress"
+                                            label="Lead Record Type"
+                                            value={value}
+                                            placeholder="Select a record type..."
+                                            options={options}
+                                            onchange={handleChangeLeadRecordTypeId}
+                                            dropdown-alignment="auto"
+                                            required>
+                        </lightning-combobox>
+                    </div>
+
+                    <div style = "padding: 2%;width:75%;" class = "slds-text-align_left">
+                            <c-search-component
+                                    obj-name="Campaign"
+                                    icon-name="standard:campaign"
+                                    label-name="Campaign"
+                                    placeholder="Search"
+                                    onlookup={handleLookup}
+                                    fields = fieldsWithRecordType
+                                    required-asterisk=true>
+                            </c-search-component>
+                    </div>
+
+                    <div style = "padding: 2%;width:75%;" class = "slds-text-align_left">
+                            <c-search-component
+                                    obj-name="Project_TT__c"
+                                    icon-name="custom:custom24"
+                                    label-name="Project"
+                                    placeholder="Search"
+                                    onlookup={handleLookup}
+                                    fields = fieldsWithRecordType
+                                    required-asterisk=true>
+                            </c-search-component>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div style="padding-left: 12%; padding-right: 11%;">
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-textarea label="Lead Item of Interest" onchange={itemOfInterestChange}></lightning-textarea>
+                </div>
+
+                <div class="slds-p-around_medium lgc-bg">
+                    <lightning-textarea label="Description" onchange={descriptionChange}></lightning-textarea>
+                </div>
+            </div>
+
+            <div id='buttons' style = "padding: 2%; text-align:center; padding-top: 1%;" class = "slds-align_absolute-center">
+                <lightning-button disabled={disableButton} variant="brand" label={labels.button} title={labels.button} onclick={handleButtonClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        </div>
+        <div if:false={isPardotSynchronized} class = "slds-align_absolute-center">
+            {labels.synchronizationMessage}
+        </div>
+    </div>
+</template>

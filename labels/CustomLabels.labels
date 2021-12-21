@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>leadFromContactButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>Create</value>
+    </labels>
+    <labels>
+        <fullName>leadFromContactCardTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>Create Lead and Campaign Member</value>
+    </labels>
+    <labels>
+        <fullName>leadFromContactError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>Unexpected error. Please contact your Salesforce administrator.</value>
+    </labels>
+    <labels>
+        <fullName>leadFromContactSuccess</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>New Lead record created.</value>
+    </labels>
+    <labels>
+        <fullName>leadFromContactSync</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>This contact is not synchronized with Pardot.</value>
+    </labels>
+    <labels>
+        <fullName>leadFromContactWarning</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>leadFromContact</shortDescription>
+        <value>Already existing Campaign Member for this Campaign. No Lead has been created.</value>
+    </labels>
+</CustomLabels>
